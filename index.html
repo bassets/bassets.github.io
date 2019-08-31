@@ -1,60 +1,14 @@
 <!DOCTYPE html>
 	<head>
-		<title>junebeetle</title>
+		<title>VAR</title>
 		<link rel="stylesheet" href="/style.css">
 		<meta charset="UTF-8">
 	</head>
-<div id="app">
-  
-  <div class="selektor">
-    
-    <header class="selektor__header">
-      <a
-        href="#"
-        class="selektor__toplevel"
-        :class="{ 'is-active': ( expanded === true ) }"
-        @click="toggleFlyout">
-        {{selected}}
-      </a>
-    </header>
-    
-    <transition name="shift">
-      <div class="selektor__inner" v-if="expanded">
-        
-        <a href="#" @click="closeFlyout" class="close">
-          <div class="sr-only" aria-hidden="true">Close Menu</div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357">
-            <path d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/>
-          </svg>
-        </a>
-        
-        <ul class="selektor__options">
-          <li v-for="(item, index) of items" :key="index">
-            <router-link
-              :to="{ name: item.label }"
-              :ref="item.label"
-              @click.native="setTopLevel">
-              <span class="item__icon">{{item.icon}}</span>
-              <span class="item__label">{{item.label}}</span>
-            </router-link>
-          </li>
-        </ul>
-        
-      </div>
-    </transition>
-    
-  </div>
-  
-  <transition
-    name="fade"
-    mode="out-in"
-    @leave="leave"
-    @enter="enter">
-    <router-view/>
-  </transition>
-  
+
+<body style="background: radial-gradient( circle, #0177a2, #09328d);justify-content: center;align-items: center;text-align: center;"></body>
+
   <footer>
-    <p>&copy; {{ new Date().getFullYear() }} Food &amp; Stuff</p>
+    <p>&copy; 2019 BHMGaming</p>
   </footer>
   
 </div>
