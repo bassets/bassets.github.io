@@ -1,0 +1,118 @@
+<!DOCTYPE html lang="en-us">
+<html>
+
+<head>
+  <style>
+    body {
+      transition: 0.2s ease;
+      overflow: hidden;
+      background-color: whitesmoke;
+    }
+
+    ::selection {
+      color: whitesmoke;
+      background-color: #9c27b0;
+    }
+
+    .menu {
+      background-color: lightblue;
+      padding: 20px;
+      border-radius: 1px;
+      overflow: hidden;
+      font: menu;
+      box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+    }
+
+    #switch {
+      cursor: pointer;
+      border-radius: 50px;
+      background: linear-gradient(to left, #a300ff, #2ed4e5);
+      width: 100px;
+      height: 50px;
+      box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+    }
+
+    #overlay {
+      cursor: pointer;
+      border-radius: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: whitesmoke;
+      transition: .5s ease;
+      left: 28.6px;
+      position: absolute;
+      transform: translate(-0%, -100%);
+      box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+    }
+
+    #caption {
+      font: caption;
+      font-size: 15px;
+      padding: 3px;
+      transition: .5s ease;
+    }
+
+    #desc {
+      margin-left: 7%;
+      transition: .5s ease;
+    }
+
+    #icon {
+      font: icon;
+      transition: .5s ease;
+      width: 123px;
+      background: linear-gradient(to top left, #ff8a00, #e52e71);
+      color: whitesmoke;
+      padding: 10px;
+      box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
+      border-radius: 3px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    #icon:hover {
+      color: #84ff4c;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <script>
+    var turned = 0
+
+    function toggle() {
+      switch (turned) {
+        case 0:
+          document.getElementById("desc").style.color = "#0b9000";
+          document.getElementById("caption").style.border = "1px solid rgba(0,0,0,.0)";
+          document.getElementById("caption").style.color = "green";
+          document.getElementById("caption").style.padding = "4px";
+          document.getElementById("overlay").style.left = "79px";
+          document.getElementById("overlay").style.background = "-webkit-gradient(linear,left top,right top,from(#ff8a00),to(#e52e71))";
+          document.getElementById("body").style.background = "#8A2387";
+          turned = 1;
+          break;
+        case 1:
+          document.getElementById("desc").style.color = "black";
+          document.getElementById("caption").style.border = "0px"
+          document.getElementById("caption").style.color = "black"
+          document.getElementById("caption").style.padding = "2px";
+          document.getElementById("overlay").style.left = "28.6px";
+          document.getElementById("overlay").style.background = "whitesmoke";
+          document.getElementById("body").style.background = "whitesmoke";
+          turned = 0;
+          break;
+      }
+    }
+  </script>
+  <div class="menu">
+    <div id="switch" onClick="toggle()"></div>
+    <div id="overlay" onClick="toggle()"></div>
+    <a id="caption">CSSwitch</a>
+    <a id="desc">A handmade switch.</a>
+  </div>
+  <br>
+  <a id="icon" href="https://github.com/barhatsor">Made with <span style="color: blue">ღ</span> by Bar</a>
+</body>
+
+</html>
