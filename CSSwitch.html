@@ -75,6 +75,13 @@ body {
   background: linear-gradient(to top left, #f48400, #de2d6e);
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
 }
+
+/* Turn off description text if the phone's too small. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 200px) {
+  #desc {
+    color: #ff00;
+  }
+}
   </style>
 </head>
 
