@@ -10,10 +10,12 @@ body {
   overflow: hidden;
   background-color: whitesmoke;
 }
+    
 ::selection {
   color: whitesmoke;
   background-color: #9c27b0;
 }
+    
 .menu {
   background-color: lightblue;
   padding: 20px;
@@ -22,6 +24,7 @@ body {
   font: menu;
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
 }
+    
 #switch {
   cursor: pointer;
   border-radius: 50px;
@@ -31,7 +34,7 @@ body {
   transform: translate(-0%, -10%);
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
 }
-
+    
 #overlay {
   cursor: pointer;
   border-radius: 50px;
@@ -44,41 +47,34 @@ body {
   transform: translate(-0%, -100%);
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
 }
-
+    
 #caption {
   font: caption;
   font-size: 15px;
   padding: 3px;
   transition: 0.5s ease;
 }
-
+    
 #desc {
   margin-left: 7%;
   transition: 0.5s ease;
 }
-
+    
 #icon {
   font: icon;
-  transition: color 0.2s, border 0.2s, box-shadow 0.2s;
+  transition: 0.2s all ease;
   width: 123px;
   background: linear-gradient(120deg,rgb(189, 79, 236) 0%,#812bea 100%);
+  color: #13da1f;
   padding: 10px;
   border-radius: 3px;
   font-size: 14px;
   text-decoration: none;
-  translateY(-1px);
 }
-
 #icon:hover {
-  translateY(0px);
-  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2);
-}
-
-/* Turn off description text if the phone's too small. Increase/decrease the pixels if needed */
-@media only screen and (max-device-width: 200px) {
-  #desc {
-    color: #ff00;
-  }
+  color: #84ff4c;
+  border: 1px solid #fff0;
+  box-shadow: 0 12px 24px -6px rgba(143,66,236,.2);
 }
   </style>
 </head>
@@ -86,7 +82,6 @@ body {
 <body id="body">
   <script>
     var turned = 0
-
     function toggle() {
       switch (turned) {
         case 0:
@@ -119,7 +114,7 @@ body {
     <a id="desc">A handmade switch.</a>
   </div>
   <br>
-  <a id="icon" href="https://github.com/barhatsor" target:"_blank">Made with <span style="color: blue">ღ</span> by Bar</a>
+  <a id="icon" href="https://github.com/barhatsor" target:"_blank">Made with <span style="color: #ff8300">ღ</span> by Bar</a>
 </body>
 
 </html>
