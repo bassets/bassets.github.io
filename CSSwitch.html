@@ -79,7 +79,7 @@ body {
   </style>
 </head>
 
-<body id="body">
+<body>
   <script>
     var turned = 0
     function toggle() {
@@ -91,7 +91,7 @@ body {
           document.getElementById("caption").style.padding = "4px";
           document.getElementById("overlay").style.left = "79px";
           document.getElementById("overlay").style.background = "-webkit-gradient(linear,left top,right top,from(#ff8a00),to(#e52e71))";
-          document.getElementById("body").style.background = "#1a73e8";
+          document.body.style.background = "#1a73e8";
           turned = 1;
           break;
         case 1:
@@ -101,7 +101,7 @@ body {
           document.getElementById("caption").style.padding = "2px";
           document.getElementById("overlay").style.left = "28.6px";
           document.getElementById("overlay").style.background = "whitesmoke";
-          document.getElementById("body").style.background = "whitesmoke";
+          document.body.style.background = "whitesmoke";
           turned = 0;
           break;
       }
@@ -116,5 +116,5 @@ body {
   <br>
   <a id="icon" href="https://github.com/barhatsor" target:"_blank">Made with <span style="color: #ff8300">ღ</span> by Bar</a>
 </body>
-
+  
 </html>
