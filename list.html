@@ -10,10 +10,11 @@
       
  html {
   background: lightblue;
-  font-family: 'Helvetica', sans-serif;
+  font-family: sans-serif;
+  font: caption;
   font-size: 15px;
 }
-
+     
 .entry {
   background: #f5f5f5;
   padding: 10px;
@@ -127,7 +128,16 @@
     padding: 12px 20px;
   }
 }   
-      
+
+@media screen and (max-width: 480px) {
+  html {
+    font-family: 'Helvetica', sans-serif;
+  }
+  #btn {
+    right: 10px;
+  }
+      }
+
 </style>
 </head>
 <body>
