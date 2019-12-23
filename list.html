@@ -91,32 +91,6 @@
   color: whitesmoke;
   padding: 10px;
 }
-      
-#overlay {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: whitesmoke;
-  transition: 0.2s ease;
-  animation: fade 1s ease;
-}
-      
-@keyframes fade {
-  0%,
-  25%,
-  50%,
-  75% {
-    position: fixed;
-    opacity: 100;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
 @keyframes return {
   0% {
@@ -144,8 +118,7 @@
 </style>
 </head>
 <body>
-<script>
-  
+<script> 
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -175,7 +148,6 @@ xmlhttp.open("GET", "https://api.myjson.com/bins/1dryiz", true);
 xmlhttp.send();
 
 window.onbeforeunload = function(e) { 
-   document.getElementById('overlay').style.opacity = 100; 
    document.getElementById('btn').className = 'out';
    document.getElementById('btn').innerHTML = 'Loading';
 }
@@ -184,6 +156,5 @@ window.onbeforeunload = function(e) {
 <section id="list">
 </section>
 <a id="btn" onclick="history.go(0);">Reload Page</a>
-<a id="overlay"></a>
 </body>
 </html>
