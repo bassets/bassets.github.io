@@ -166,8 +166,13 @@ window.onbeforeunload = function(e) {
   document.getElementById('btn').innerHTML = 'Loading';
 }
 </script>
-<h1>Error<h1>
-<br>
-Couldn't connect to the <a href="https://api.myjson.com/bins/1dryiz">VAR server</a>.
+<section id="list">
+  <a>
+  Error
+  <br>
+    Couldn't connect to the <a href="https://api.myjson.com/bins/1dryiz">VAR server</a>.</a>
+</section>
+<a id="btn" onclick="history.go(0);">Reload Page</a>
+<a id="overlay"></a>
 </body>
 </html>
