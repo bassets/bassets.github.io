@@ -162,8 +162,9 @@ if (navigator.userAgent.match(/(ipad|iphone|ipod)/i) && !window.MSStream) {
 }
 
 window.onbeforeunload = function(e) { 
+   document.getElementById('overlay').style.opacity = 100; 
    document.getElementById('btn').className = 'out';
-  document.getElementById('btn').innerHTML = 'Loading';
+   document.getElementById('btn').innerHTML = 'Loading';
 }
 </script>
 <section id="list">
