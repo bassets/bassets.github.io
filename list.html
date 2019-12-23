@@ -133,6 +133,7 @@
 <body>
 <script>
 var xmlhttp = new XMLHttpRequest();
+
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myObj = JSON.parse(this.responseText);
@@ -159,15 +160,12 @@ xmlhttp.open("GET", "https://api.myjson.com/bins/1dryiz", true);
 
 xmlhttp.send();
 
-if (navigator.userAgent.match(/(ipad|iphone|ipod)/i) && !window.MSStream) {
-  document.documentElement.className += " ios";
-}
-
 window.onbeforeunload = function(e) { 
    document.getElementById('overlay').style.opacity = 100; 
    document.getElementById('btn').className = 'out';
    document.getElementById('btn').innerHTML = 'Loading';
 }
+  
 </script>
 <section id="list">
   <a>
