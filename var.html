@@ -1,0 +1,760 @@
+<!-- 2019 Bar Hatsor. For the VAR project: bit.ly/vargoogleplay -->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
+<link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://barhatsor.github.io/assets/barlogo-invis-gray.ico">
+<style>
+      header {
+  background-color: var(--header-background-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 10px 10px var(--grey-20); }
+
+.header-wrapper {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 16px 64px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%; }
+  @media (max-width: 1000px) {
+            .features {
+            background-color: var(--vpn-background-color) !important;
+        }
+    .header-wrapper {
+      padding: 16px 32px; } }
+  @media (max-width: 675px){
+    .header-wrapper {
+      padding: 16px 32px; } }
+  .header-wrapper.show-shadow {
+    box-shadow: 0 10px 10px var(--grey-20); }
+  .header-wrapper .guardian-logo {
+    height: 48px;
+    position: relative; }
+    @media (max-width: 675px) {
+      .header-wrapper .guardian-logo {
+        height: 40px; } }
+    .header-wrapper .guardian-logo a {
+      background: url("https://barhatsor.github.io/assets/NoPicIcon.svg") no-repeat;
+      background-size: 5.5rem;
+      display: inline-block;
+      height: 5.5rem;
+      width: 5.5rem;
+transform: translate(0,-.5rem);}
+      @media (max-width: 675px) {
+        .header-wrapper .guardian-logo a {
+          background-size: 238px;
+          height: 40px;
+          width: 238px; } }
+  .header-wrapper nav {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end; }
+    .header-wrapper nav .nav-item {
+      color: var(--grey-80);
+      font-family: "Metropolis", sans-serif;
+      font-weight: 600;
+      margin-left: 64px;
+      position: relative; }
+      @media (max-width: 1000px) {
+        .header-wrapper nav .nav-item:not(.login) {
+          display: none; }
+}
+      .header-wrapper nav .nav-item::after {
+        height: 3px;
+        opacity: 1;
+        display: block;
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        border-radius: 100px;
+        transition: all 0.2s ease; }
+      .landing-page .header-wrapper nav .nav-item.home {
+        color: var(--white); }
+      .landing-page .header-wrapper nav .nav-item.home::after {
+        background: var(--nav-home-gradient); }
+      .header-wrapper nav .nav-item.home:hover::after {
+        background: var(--nav-home-gradient); }
+      .browser-landing-page .header-wrapper nav .nav-item.browser {
+        color: var(--white); }
+      .browser-landing-page .header-wrapper nav .nav-item.browser::after {
+        background: var(--nav-browser-gradient); }
+      .header-wrapper nav .nav-item.browser:hover::after {
+        background: var(--nav-browser-gradient); }
+      .vpn-landing-page .header-wrapper nav .nav-item.vpn,
+      .download-page .header-wrapper nav .nav-item.vpn,
+      .invite-page .header-wrapper nav .nav-item.vpn {
+        color: var(--white); } .header-wrapper nav .nav-item.vpn::after,
+      .download-page .header-wrapper nav .nav-item.vpn::after,
+      .invite-page .header-wrapper nav .nav-item.vpn::after {
+        background: var(--nav-vpn-gradient);}
+      .header-wrapper nav .nav-item.vpn:hover::after {
+        background: var(--nav-vpn-gradient); }
+
+.header-mobile-nav {
+  background-color: var(--mobile-nav-background-color);
+  box-shadow: 0 2px 2px -1px rgba(2, 2, 2, 0.3);
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0;
+  position: relative;
+  transition: all 0.2s ease;
+  visibility: visible; }
+  @media (max-width: 1000px) {
+    .header-mobile-nav {
+      display: flex; } 
+    .header-wrapper {
+      display: none;
+    }}
+  .header-mobile-nav button.menu {
+    background: url("https://barhatsor.github.io/assets/NoPicIcon.svg") no-repeat 100px;
+        background-position-x: 100px;
+    border: 0;
+    color: 
+
+transparent;
+
+font-size: 15px;
+
+line-height: 24px;
+
+padding: 16px 32px;
+
+background-position-x: 10px; }
+  .header-mobile-nav nav {
+    border-top: solid 1px var(--header-background-color);
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%; }
+    .header-mobile-nav nav a {
+      border-radius: 4px;
+      color: var(--white);
+      font-family: "Metropolis", sans-serif;
+      font-size: 15px;
+      line-height: 24px;
+      margin: 8px;
+      padding: 8px 24px; }
+      .header-mobile-nav nav a:hover {
+        background-color: var(--header-background-color); }
+  .header-mobile-nav.open nav {
+    display: flex; }
+  .header-mobile-nav.open button.menu {
+    background-image: url("/images/icon-arrowhead-up.svg"); }
+
+footer {
+  background-color: var(--black); }
+  footer ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 57px 64px 64px; }
+    @media (max-width: 1000px) {
+      footer ul {
+        flex-direction: column;
+        padding: 64px 64px 32px; } }
+    footer ul li {
+      margin-left: 2rem; }
+      @media (max-width: 1000px) {
+        footer ul li {
+          margin-bottom: 32px;
+          margin-left: auto;
+          margin-right: auto; } }
+      @media (max-width: 675px) {
+        footer ul li {
+          margin-bottom: 32px; } }
+      footer ul li.moz-link {
+        margin: auto auto auto 0; }
+        @media (max-width: 1000px) {
+          footer ul li.moz-link {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 64px; } }
+        @media (max-width: 675px) {
+          footer ul li.moz-link {
+            margin-bottom: 32px; } }
+        footer ul li.moz-link img {
+          background: #000; }
+      footer ul li a {
+        font-size: 15px;
+        line-height: 24px;
+        text-decoration: none;}
+        @media (max-width: 675px) {
+          footer ul li a {
+            font-size: 13px;
+            line-height: 21px; } }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Metropolis/Metropolis-Bold.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/Metropolis/Metropolis-SemiBold.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Metropolis/Metropolis-Medium.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Inter/Inter-UI-Regular.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/Inter/Inter-UI-Italic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-Italic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Inter/Inter-UI-Medium.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-Medium.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/fonts/Inter/Inter-UI-MediumItalic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-MediumItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/Inter/Inter-UI-SemiBold.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-SemiBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/fonts/Inter/Inter-UI-SemiBoldItalic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-SemiBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Inter/Inter-UI-Bold.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-Bold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/Inter/Inter-UI-BoldItalic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-BoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/Inter/Inter-UI-ExtraBold.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-ExtraBold.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/fonts/Inter/Inter-UI-ExtraBoldItalic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-ExtraBoldItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-UI-Black.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-Black.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/fonts/Inter/Inter-UI-BlackItalic.woff2") format("woff2"), url("/fonts/Inter/Inter-UI-BlackItalic.woff") format("woff"); }
+
+@font-face {
+  font-family: "Inter UI var";
+  font-weight: 400 900;
+  font-style: oblique 0deg 10deg;
+  src: url("/fonts/Inter/Inter-UI.var.woff2") format("woff2-variations"), url("/fonts/Inter/Inter-UI.var.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Inter UI var alt";
+  font-weight: 400 900;
+  font-style: normal;
+  src: url("/fonts/Inter/Inter-UI-upright.var.woff2") format("woff2 supports variations(gvar)"), url("/fonts/Inter/Inter-UI-upright.var.woff2") format("woff2-variations"), url("/fonts/Inter/Inter-UI-upright.var.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Inter UI var alt";
+  font-weight: 400 900;
+  font-style: italic;
+  src: url("/fonts/Inter/Inter-UI-italic.var.woff2") format("woff2 supports variations(gvar)"), url("/fonts/Inter/Inter-UI-italic.var.woff2") format("woff2-variations"), url("/fonts/Inter/Inter-UI-italic.var.woff2") format("woff2"); }
+
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  --almost-black: #0c0c0d;
+  --black: #000;
+  --blue-30: #00b3f4;
+  --blue-40: #0090ed;
+  --blue-50: #0060df;
+  --blue-80: #073072;
+  --green-40: #54ffbd;
+  --green-50: #3fe1b0;
+  --grey-5: #f9f9fa;
+  --grey-10: rgba(12, 12, 13, 0.1);
+  --grey-20: rgba(12, 12, 13, 0.2);
+  --grey-30: rgba(12, 12, 13, 0.4);
+  --grey-40: rgba(12, 12, 13, 0.6);
+  --grey-50: rgba(12, 12, 13, 0.8);
+  --grey-80: rgba(255, 255, 255, 0.8);
+  --purple-50: #9059ff;
+  --purple-90: #321c64;
+  --red-50: #ff4f5e;
+  --violet-90: #2b1141;
+  --white: #fff;
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-12: rgba(255, 255, 255, 0.12);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --blue3: #0060df;
+  --blue4: #0250bb;
+  --background-color: var(--almost-black);
+  --header-background-color: var(--almost-black);
+  --header-text-gradient: var(--firefox-gradient);
+  --features-background-color: var(--white-12);
+  --firefox-gradient: linear-gradient(
+    225deg,
+    #ffa436 0%,
+    #ff4f5e 31.77%,
+    #ff298a 66.15%,
+    #9059ff 100%
+  );
+  --nav-home-gradient: linear-gradient(
+    -90deg,
+    #ff9100 0%,
+    #f10366 50%,
+    #6173ff 100%
+  );
+  --nav-browser-gradient: radial-gradient(
+    100% 100% at 100% 0%,
+    #0060df 0%,
+    #3fe1b0 100%
+  );
+  --nav-vpn-gradient: radial-gradient(
+    100% 100% at 100% 0%,
+    #b833e1 0%,
+    #9059ff 37.1%,
+    #5b6df8 61.4%,
+    #0090ed 100%
+  );
+  --vpn-background-color: #231641;
+  --browser-background-color: #09224a;
+  --mobile-nav-background-color: var(--white-10);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0;
+  scroll-behavior: smooth;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  margin: 0; }
+
+p {
+  margin: 0; }
+  p a {
+    text-decoration: underline; }
+
+a {
+  color: var(--white);
+  font-family: "Metropolis", sans-serif;
+  font-weight: 600;
+  text-decoration: none; }
+
+main {
+  font-size: 25px;
+  min-height: calc(100vh - 160px);
+  padding: 80px 0 128px; }
+  @media (max-width: 1000px) {
+    main {
+      padding: 128px 0; } }
+  @media (max-width: 675px) {
+    main {
+      padding: 80px 0 64px; } }
+
+.page-container {
+  background-color: var(--background-color); }
+  .page-container .hero {
+    /*! padding-top: 100px; */ }
+    @media (max-width: 1000px) {
+      .page-container .hero {
+        padding-top: 128px; } }
+    .page-container .hero h1 {
+      background: var(--header-text-gradient);
+      background-clip: text;
+      font-size: 56px;
+      line-height: 52px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+      @media (max-width: 675px) {
+        .page-container .hero h1 {
+          font-size: 28px;
+          line-height: 34px; } }
+    .page-container .hero p {
+      color: var(--white-80);
+      font-size: 24px;
+      line-height: 32px;
+      margin: 32px 0 64px; }
+      @media (max-width: 675px) {
+        .page-container .hero p {
+          font-size: 16px;
+          line-height: 24px;
+          margin-top: 16px; } }
+  .page-container .unavailable-info {
+    background: url("/images/icon-info.svg") no-repeat 32px center;
+    border: solid 2px var(--white-12);
+    border-radius: 16px;
+    display: inline-block;
+    padding: 32px 32px 32px 72px;
+    text-align: left; }
+    .page-container .unavailable-info p {
+      font-size: 18px;
+      line-height: 25px;
+      margin: 0;
+      padding: 0; }
+      @media (max-width: 675px) {
+        .page-container .unavailable-info p {
+          font-size: 13px;
+          line-height: 21px; } }
+  .page-container .more-info {
+    padding-top: 128px; }
+    @media (max-width: 675px) {
+      .page-container .more-info {
+        padding-top: 64px; } }
+    .page-container .more-info h2 {
+      color: var(--white);
+      font-size: 48px;
+      line-height: 52px; }
+      @media (max-width: 675px) {
+        .page-container .more-info h2 {
+          font-size: 28px;
+          line-height: 34px; } }
+    .page-container .more-info p {
+      color: var(--white-80);
+      font-size: 18px;
+      line-height: 34px;
+      margin-top: 32px; }
+      @media (max-width: 675px) {
+        .page-container .more-info p {
+          margin-top: 16px;
+          line-height: 24px; } }
+  .page-container .faq {
+    margin: 0 auto;
+    max-width: 1184px;
+    padding: 0 64px; }
+    @media (max-width: 675px) {
+      .page-container .faq {
+        padding: 0 32px; } }
+    .page-container .faq h2 {
+      text-align: center; }
+    .page-container .faq .faq-list {
+      display: flex;
+      flex-direction: row;
+      margin: 64px 0 0; }
+      @media (max-width: 675px) {
+        .page-container .faq .faq-list {
+          flex-direction: column;
+          margin: 0; } }
+    .page-container .faq .faq-column {
+      display: flex;
+      flex-direction: column;
+      margin-right: 64px;
+      width: 50%; }
+      @media (max-width: 675px) {
+        .page-container .faq .faq-column {
+          margin: 64px 0 0;
+          width: 100%; } }
+      .page-container .faq .faq-column:last-child {
+        margin: 0; }
+        @media (max-width: 675px) {
+          .page-container .faq .faq-column:last-child {
+            margin: 64px 0 0; } }
+    .page-container .faq .faq-item {
+      margin: 54px 0 0; }
+      .page-container .faq .faq-item:first-child {
+        margin: 0; }
+      .page-container .faq .faq-item h5 {
+        color: var(--white);
+        font-size: 18px;
+        line-height: 28px; }
+        @media (max-width: 675px) {
+          .page-container .faq .faq-item h5 {
+            font-size: 16px;
+            line-height: 24px; } }
+      .page-container .faq .faq-item p {
+        font-size: 18px;
+        line-height: 34px;
+        margin: 4px 0 5px; }
+        @media (max-width: 675px) {
+          .page-container .faq .faq-item p {
+            font-size: 16px;
+            line-height: 24px; } }
+    .page-container .faq .see-more {
+      margin: 32px 0 0;
+      text-align: center; }
+  .page-container .partners {
+    background: url("/images/logo-firefox.svg") no-repeat top center;
+    background-size: 80px;
+    margin-top: 128px;
+    padding: 112px 0 128px;
+    text-align: center; }
+    @media (max-width: 675px) {
+      .page-container .partners {
+        margin-top: 64px;
+        padding-bottom: 64px; } }
+    .page-container .partners .learn-more {
+      margin-top: 64px; }
+
+.text-block {
+  margin: 0 auto;
+  max-width: 870px;
+  padding: 0 64px;
+  text-align: center; }
+  @media (max-width: 1000px) {
+    .text-block {
+      max-width: 768px; } }
+  @media (max-width: 675px) {
+    .text-block {
+      padding: 0 32px; } }
+
+.breadcrumbs {
+  border-bottom: solid 1px var(--grey-10); }
+  @media (max-width: 1000px) {
+    .breadcrumbs {
+      margin-top: 10px; } }
+  @media (max-width: 675px) {
+    .breadcrumbs {
+      margin-top: 57px; } }
+  .breadcrumbs ul {
+    display: flex;
+    font-family: "Metropolis", sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    list-style: none;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px 64px; }
+    @media (max-width: 1000px) {
+      .breadcrumbs ul {
+        padding: 16px 32px; } }
+    .breadcrumbs ul li {
+      padding: 0 26px 0 18px;
+      position: relative; }
+      @media (max-width: 675px) {
+        .breadcrumbs ul li {
+          padding: 0 20px 0 12px; } }
+      .breadcrumbs ul li:first-child {
+        padding-left: 0; }
+      .breadcrumbs ul li:last-child {
+        padding-right: 0; }
+        .breadcrumbs ul li:last-child::after {
+          display: none; }
+      .breadcrumbs ul li::after {
+        color: var(--grey-40);
+        content: "\25B8";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0; }
+    .breadcrumbs ul a {
+      color: var(--grey-40); }
+    .breadcrumbs ul span {
+      font-family: "Metropolis", sans-serif;
+      font-weight: 600;
+      color: var(--grey-50); }
+
+.light-page {
+  --background-color: var(--grey-5);
+  color: var(--grey-40); }
+  .light-page:not(.error-page) {
+    --header-background-color: var(--vpn-background-color); }
+
+button.cta {
+  background-color: var(--blue3);
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px var(--blue3);
+  border-radius: 8px;
+  font-family: "Metropolis", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 19px 32px;
+  position: relative;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+  @media (max-width: 675px) {
+    button.cta {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 20px 32px; } }
+  button.cta:hover {
+    background-color: var(--blue4);
+    border-color: var(--blue4); }
+
+var(--purple-90);
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: center;
+      background-size: 70%;
+      box-shadow: 0 12px 18px rgba(34, 0, 51, 0.04);
+      border-radius: 16px;
+      height: 25vw;
+      margin: auto 0 0;
+      max-height: 352px;
+      width: 100%; }
+      @media (max-width: 1000px) {
+        .steps .step .img-container {
+          background-size: 240px;
+          height: 310px; } }
+      .browser-landing-page .steps .step .img-container {
+        background-color: var(--blue-80); }
+      .steps .step .img-container.screenshot {
+        background-size: 75%; }
+        @media (max-width: 1000px) {
+          .steps .step .img-container.screenshot {
+            background-size: 224px; } }
+      .steps .step .img-container.subscribe {
+        background-image: url("/images/step1-vpn.svg"); }
+      .steps .step .img-container.turn-on {
+        background-image: url("/images/step2-vpn.svg"); }
+      .steps .step .img-container.browse {
+        background-image: url("/images/step3-vpn.svg"); }
+      .steps .step .img-container.step-1-browser {
+        background-image: url("/images/step1-browser.svg"); }
+      .steps .step .img-container.step-2-browser {
+        background-image: url("/images/step2-browser.svg"); }
+      .steps .step .img-container.step-3-browser {
+        background-image: url("/images/step3-browser.svg"); }
+
+.features {
+  background-color: var(--features-background-color);
+  display: flex;
+  flex-direction: row;
+  padding: 70px; }
+  @media (max-width: 1000px) {
+    .features {
+      flex-direction: column;
+      padding: 64px; } }
+  @media (max-width: 675px) {
+    .features {
+      border-radius: 8px;
+      padding: 32px; } }
+
+.vpn-landing-page {
+  --background-color: var(--vpn-background-color);
+  --header-background-color: var(--vpn-background-color);
+  --header-text-gradient: radial-gradient(
+    100% 100% at 100% 0%,
+    #b833e1 0%,
+    #9059ff 37.1%,
+    #5b6df8 61.4%,
+    #0090ed 100%
+  );
+  --features-background-color: #321c64;
+  --mobile-nav-background-color: var(--purple-90);
+  color: var(--grey-80); }
+  .vpn-landing-page .hero .now-available,
+  .vpn-landing-page .hero .subscriber-since,
+  .vpn-landing-page .hero .money-back-guarantee,
+  .vpn-landing-page .hero .login {
+    color: var(--white-80);
+    font-size: 15px;
+    line-height: 21px;
+    margin: 32px 0 0; }
+    @media (max-width: 675px) {
+      .vpn-landing-page .hero .now-available,
+      .vpn-landing-page .hero .subscriber-since,
+      .vpn-landing-page .hero .money-back-guarantee,
+      .vpn-landing-page .hero .login {
+        font-size: 13px; } }
+  .vpn-landing-page .hero .money-back-guarantee + .now-available,
+  .vpn-landing-page .hero .login {
+    margin-top: 16px; }
+  .vpn-landing-page .about-our-vpn-partner {
+    background-image: url("/images/logo-trusted-partner.svg"); }
+    </style>
+</head>
+<body>
+  <div id="__next">
+    <div class="page-container vpn-landing-page">
+      <header>
+        <div class="header-wrapper">
+          <div class="guardian-logo"><a href="https://barhatsor.github.io/assets/var"><span aria-label="Firefox Private Network Home"></span></a></div>
+          <nav><a class="nav-item vpn" href="https://barhatsor.github.io/assets/var"><span>Home</span></a><a class="nav-item browser" href="archive"><span>Archive</span></a><a class="nav-item home" href="https://bit.ly/vargoogleplay"><span>About</span></a></nav>
+        </div>
+        <a href="https://barhatsor.github.io/assets/var"><div class="header-mobile-nav"><button class="menu">logo</button></a>
+        </div>
+      </header>
+      <main>
+        <div class="features-wrapper">
+          <section class="features">
+            <div class="hero text-block">
+              <h1>The VAR Picture Library</h1>
+              <p>300+ Icons, all for the VAR app. Now available limited-time as a downloadable package. Get the latest release, or browse old ones.</p><a href="Iconpacks/VARIconPack-1.0.zip"><button class="join-waitlist cta">Download Now</button></a>
+              <p class="money-back-guarantee">30-second download-time guarantee</p>
+              <p class="now-available">Now available as an SVG or PNG package. More formats coming soon.</p>
+              <p class="login">Already downloaded? <a href="/archive">Old versions</a></p>
+            </div>
+          </section>
+          </main>
+          <footer>
+            <ul>
+              <li class="moz-link"><a href="https://bit.ly/vargoogleplay"><img src="https://barhatsor.github.io/assets/varlogo-white.svg" width="100px" aria-hidden="true" alt=""></a></li>
+              <li><a href="https://github.com/barhatsor" target="_blank" rel="noopener">Github</a></li>
+              <li><a href="https://codepen.io/barhatsor" target="_blank" rel="noopener">Codepen</a></li>
+              <li><a href="https://dribble.com/barhatsor" target="_blank" rel="noopener">Dribbble</a></li>
+            </ul>
+          </footer>
+</body>
+</html>
