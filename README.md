@@ -1,2 +1,2 @@
-# VAR-Site
-The site for our Very Augmented Reality project. Visit it [here](https://barhatsor.github.io/var).
+# Dri.bl
+The asset site for all barhatsor projects. Visit it [here](https://barhatsor.github.io/var).
