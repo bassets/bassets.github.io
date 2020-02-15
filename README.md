@@ -1,2 +1,2 @@
-# drbl
-The asset site for all barhatsor projects. Visit it [here](https://barhatsor.github.io/var).
+# dble
+The asset site for all barhatsor projects. Visit it [here](https://barhatsor.github.io/dble).
