@@ -1,2 +1,2 @@
-# dribl
-The asset site for all barhatsor projects. Visit it [here](https://barhatsor.github.io/dribl).
+# assets
+The asset site for all barhatsor projects. Visit it [here](https://barhatsor.github.io/assets).
