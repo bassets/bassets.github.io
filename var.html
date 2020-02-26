@@ -2,11 +2,21 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>The VAR Picture Library | bassets</title>
+<title>The VAR Picture Library | bassets</title>
 <link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
 <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://bassets.github.io/barlogo-invis-gray.ico">
 <style>
-      header {
+#loader {
+  opacity: 0;
+  display: none;
+  animation: loader 2s;
+}
+@keyframes loader {
+  0%,75% {
+    opacity: 100;
+  }
+}
+header {
   background-color: var(--header-background-color);
   display: flex;
   flex-direction: column;
@@ -718,6 +728,7 @@ var(--purple-90);
     </style>
 </head>
 <body>
+ <iframe src="https://cdpn.io/barhatsor/debug/oNXYZJq" style="border: none;position: fixed;width: 100%;height: 100%;z-index: 200;"></iframe>
   <div id="__next">
     <div class="page-container vpn-landing-page">
       <header>
