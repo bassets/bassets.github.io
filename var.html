@@ -7,14 +7,15 @@
 <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://bassets.github.io/barlogo-invis-gray.ico">
 <style>
 iframe {
-  opacity: 0;
-  display: none;
   animation: loader 2s;
+  animation-fill-mode: forwards;
 }
 @keyframes loader {
-  0%,75% {
-    opacity: 100;
-    display: block;
+  75% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
   }
 }
 header {
