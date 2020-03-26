@@ -141,20 +141,19 @@ const recordAudio = () =>
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time));
 
-var recordin = true;
+var recording = true;
 
 const startRecording = async () => {
   const recorder = await recordAudio();
-  const actionButton = document.getElementById('recorder');
+  const actionButton = document.getElementById("recorder");
   actionButton.disabled = true;
   recorder.start();
-  while (recordin == true) {
+  while (recording == true) {
     await sleep(1);
   }
   const audio = await recorder.stop();
   await sleep(2000);
   audio.play();
-  await sleep(1000);
   actionButton.disabled = false;
 }
 
@@ -162,16 +161,16 @@ const startRecording = async () => {
 document.getElementById("recorder").addEventListener("click", e => {
   if (document.getElementById("recorder").classList.contains("recording")) {
    document.getElementById("recorder").classList.remove("recording"); document.getElementById("recorder").classList.add("download");
-recordin = false;
+   recording = false;
 setTimeout(function() {
   document.getElementById("recorder").classList.remove("download");
  document.getElementById("recorder").classList.add("out");
   }, 1000);
 }
   else if (!document.getElementById("recorder").classList.contains("recording") && !document.getElementById("recorder").classList.contains("download")) {
-document.getElementById("recorder").classList.remove("out");
-    document.getElementById("recorder").classList.add("recording");
-   recordin = true;
+  document.getElementById("recorder").classList.remove("out");
+  document.getElementById("recorder").classList.add("recording");
+  recording = true;
   startRecording();
   }
 });
