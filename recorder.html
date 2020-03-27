@@ -1,24 +1,19 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Audio Recorder | bassets</title>
-<link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://bassets.github.io/barlogo-invis-gray.ico">
+<title>Audio Recorder</title>
+<link rel="icon" type="image/x-icon" href="https://bassets.github.io/barlogo-invis-gray.ico">
 <style>
 #recorder {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
   background: #38383d;
   border: 1px solid #f9f9fa33;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
   transition: 0.2s ease;
-  animation: in 0.2s ease;
 }
 #recorder #record {
   width: 60%;
@@ -65,7 +60,6 @@
 #recorder.out #record {
   animation: out 0.8s ease, in 0.2s 0.8s ease;
 }
-
 @keyframes in {
   from {
     height: 0%;
@@ -73,7 +67,7 @@
   }
 }
 @keyframes recording {
-  from, to {
+  from,to {
     transform: rotate(10deg);
   }
   50% {
@@ -97,21 +91,31 @@
   20% {
     top: 8%;
   }
-  75%, 100% {
+  75%,100% {
     top: 100%;
     opacity: 0;
     height: 0px;
   }
 }
 body {
-  background: #2a2a2e;
+  background-color: #2a2a2e;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 </style>
 </head>
 <body>
-<div id="recorder"><img id="record" src="https://bassets.github.io/record.svg"/><img id="arrow" src="https://bassets.github.io/arrow.svg"/></div>
+<div id="recorder">
+ <img id="record" src="https://bassets.github.io/record.svg"/>
+ <img id="arrow" src="https://bassets.github.io/arrow.svg"/>
+</div>
 <script>
-// Back-end
+/* (C) 2020 Bar Hatsor, MIT License
+— If a copy of the MIT was not distributed with this file,
+  you can obtain one at bassets.github.io/mit. */
+
 const recordAudio = () =>
   new Promise(async resolve => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -157,19 +161,18 @@ const startRecording = async () => {
   actionButton.disabled = false;
 }
 
-// Front-end
 document.getElementById("recorder").addEventListener("click", e => {
   if (document.getElementById("recorder").classList.contains("recording")) {
    document.getElementById("recorder").classList.remove("recording"); document.getElementById("recorder").classList.add("download");
-   recording = false;
+recording = false;
 setTimeout(function() {
   document.getElementById("recorder").classList.remove("download");
  document.getElementById("recorder").classList.add("out");
   }, 1000);
 }
   else if (!document.getElementById("recorder").classList.contains("recording") && !document.getElementById("recorder").classList.contains("download")) {
-  document.getElementById("recorder").classList.remove("out");
-  document.getElementById("recorder").classList.add("recording");
+document.getElementById("recorder").classList.remove("out");
+    document.getElementById("recorder").classList.add("recording");
   recording = true;
   startRecording();
   }
