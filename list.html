@@ -117,40 +117,52 @@
 </style>
 </head>
 <body>
-<script> 
-var xmlhttp = new XMLHttpRequest();
-
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
-    var out = "";
-    var i;
-    for (i = 0; i < myObj.POintList.length; i++) {
-      out +=
-        '<div class="entry" onclick="window.location.href = \'https://www.google.com/maps/search/' +
-        myObj.POintList[i].Centerloc.lat +
-        "," +
-        myObj.POintList[i].Centerloc.lng +
-        "';\">" +
-        '<img src="https://bassets.github.io/NoPicIcon.svg" alt="No Picture Available"><a class="title">' +
-        myObj.POintList[i].desc +
-        '</a><a class="description">It was placed at ' +
-        myObj.POintList[i].dtime +
-        ".</a></div>";
-    }
-    document.getElementById("list").innerHTML = out;
+<script>
+function renderMarkers(response) {
+  var myObj = JSON.parse(response);
+  var out = "";
+  var i;
+  for (i = 0; i < myObj.POintList.length; i++) {
+    out +=
+      '<div class="entry" onclick="window.location.href = \'https://www.google.com/maps/search/' +
+      myObj.POintList[i].Centerloc.lat +
+      "," +
+      myObj.POintList[i].Centerloc.lng +
+      "';\">" +
+      '<img src="https://bassets.github.io/NoPicIcon.svg" alt="No Picture Available"><a class="title">' +
+      myObj.POintList[i].desc +
+      '</a><a class="description">It was placed at ' +
+      myObj.POintList[i].dtime +
+      ".</a></div>";
   }
-};
+  document.getElementById("list").innerHTML = out;
+}
 
-xmlhttp.open("GET", "https://jsonblob.com/api/var/d1d0be40-90ff-11ea-bb21-f9b978970334", true);
-
-xmlhttp.send();
-
+window.setInterval(httpRequest("GET", "https://jsonblob.com/api/var/d1d0be40-90ff-11ea-bb21-f9b978970334", renderMarkers), 2000);
+  
 window.onbeforeunload = function(e) { 
    document.getElementById('btn').className = 'out';
    document.getElementById('btn').innerHTML = 'Refreshing';
 }
+
   
+function httpRequest(action, url, header, data, callback) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() { 
+        if (this.readyState == 4 && this.status == 200) {
+           try { callback(this.responseText) } catch(e) {}
+        }
+    }
+    xmlhttp.open(action, url, true);    
+    if (header) {
+    	xmlhttp.setRequestHeader('Content-Type', header);
+      }
+    if (data) {
+    	xmlhttp.send(data);
+      } else {
+    xmlhttp.send();
+    }
+}
 </script>
 <section id="list">
 </section>
