@@ -60,7 +60,7 @@ button:hover {
   position: absolute;
   height: calc(100% - 1px);
   padding: 0 4px;
-  left: 7px;
+  right: 7px;
   top: 0;
   color: gray;
   pointer-events: none;
