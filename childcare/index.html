@@ -28,7 +28,7 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>  
 <script>
 function send() {
-  document.querySelector('.button').innerHTML = 'שולח...';
+  document.querySelector('button').innerHTML = 'שולח...';
   var value = "שם פרטי: "+document.getElementById('fname').value+"<br>שם משפחה: "+document.getElementById('lname').value+"<br>תוכן: "+document.getElementById('content').value
   Email.send({
     Host: "smtp.gmail.com",
@@ -46,4 +46,3 @@ function send() {
 </script>
 </body>
 </html>
- 
