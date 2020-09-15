@@ -28,7 +28,7 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>  
 <script>
 function send() {
-  var value = "שם פרטי: "+document.getElementById('fname').value+"\nשם משפחה: "+document.getElementById('lname').value+"\nתוכן: "+document.getElementById('content').value
+  var value = "שם פרטי: "+document.getElementById('fname').value+"<br>שם משפחה: "+document.getElementById('lname').value+"<br>תוכן: "+document.getElementById('content').value
   Email.send({
     Host: "smtp.gmail.com",
     Username: "childcaremailll@gmail.com",
