@@ -34,7 +34,7 @@ button:hover {
 .input:first-of-type {
   margin-top: 50px;
 }
-.input input {
+.input input, .input textarea {
   border: 1px solid rgba(249, 249, 250, 0.2);
   background: #38383d;
   font: inherit;
@@ -47,7 +47,7 @@ button:hover {
   -webkit-appearance: none;
   transition: inherit;
 }
-.input input:focus {
+.input input:focus, .input textarea:focus {
   box-shadow: 0 0 0 1px #45a1ff, 0 0 0 4px rgba(69, 161, 255, 0.3),
     0 0 0 1px #45a1ff;
 }
@@ -55,28 +55,25 @@ button:hover {
   width: calc(100% - 30px);
 }
 .input a {
-  display: grid;
-  align-content: center;
   position: absolute;
   height: calc(100% - 1px);
   padding: 0 4px;
   right: 7px;
-  top: 0;
+  top: 11px;
   width: max-content;
   color: gray;
   pointer-events: none;
   user-select: none;
   transition: inherit;
 }
-.input input:focus + a,
-.input input:valid + a {
+.input input:focus + a, .input input:valid + a, .input textarea:focus + a, .input textarea:valid + a {
   top: -10px;
   left: 5px;
   height: 15px;
   font-size: 14px;
   box-shadow: inset 0 -5px 0 0 #38383d;
 }
-.input input:focus + a {
+.input input:focus + a, .input textarea:focus + a {
   color: #45a1ff;
   box-shadow: inset 0 -9.5px 0 0 #38383d;
 }
