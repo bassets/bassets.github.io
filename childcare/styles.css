@@ -84,7 +84,7 @@ button:hover {
   background: #2a2a2e;
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   transition: .2s ease;
   top: 0;
   left: 0;
