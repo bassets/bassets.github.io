@@ -1,6 +1,5 @@
 h1 {
   font-weight: 100;
-  text-align: right;
 }
 
 h2 {
@@ -86,7 +85,7 @@ html {
   display: grid;
   text-align: right;
   white-space: pre-line;
-  padding: 0 30px;
+  padding: 0 10vw;
   direction: rtl;
   font-family: 'Inter', sans-serif;
   scrollbar-color: #414148 #2a2a2e;
