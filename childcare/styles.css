@@ -55,12 +55,13 @@ button:hover {
   width: calc(100% - 30px);
 }
 .input a {
+  display: grid;
+  align-content: center;
   position: absolute;
   height: calc(100% - 1px);
   padding: 0 4px;
-  right: 7px;
-  top: 11px;
-  width: max-content;
+  left: 7px;
+  top: 0;
   color: gray;
   pointer-events: none;
   user-select: none;
@@ -125,3 +126,4 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 0 transparent !important;
 }
+
