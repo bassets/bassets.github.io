@@ -1,5 +1,6 @@
 h1 {
   font-weight: 100;
+  text-align: right;
 }
 
 h2 {
@@ -75,6 +76,22 @@ button:hover {
 .input input:focus + a, .input textarea:focus + a {
   color: #45a1ff;
   box-shadow: inset 0 -9.5px 0 0 #38383d;
+}
+
+.overlay {
+  display: grid;
+  place-content: center;
+  background: #2a2a2e;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: .2s ease;
+  top: 0;
+  left: 0;
+}
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
