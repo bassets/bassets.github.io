@@ -86,6 +86,7 @@ button:hover {
   margin-top: 50px;
   margin-bottom: -17px;
   width: calc(100% - 20px);
+  display: block;
 }
 .select select {
   border: 1px solid rgba(249, 249, 250, 0.2);
@@ -104,6 +105,7 @@ button:hover {
 .select svg {
   position: absolute;
   left: 5px;
+  top: 25%;
   width: 20px;
   pointer-events: none;
   transform: rotate(-90deg);
