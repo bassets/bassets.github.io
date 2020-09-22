@@ -107,7 +107,7 @@ html {
   padding: 0 10vw;
   direction: rtl;
   font-family: 'Inter', sans-serif;
-  scrollbar-color: #414148 #2a2a2e;
+  scrollbar-color: #40a9ff #0074d9;
   scrollbar-width: thin;
   -webkit-tap-highlight-color: transparent;
 }
@@ -115,10 +115,10 @@ html {
   background: #f9f9fa33;
 }
 ::-webkit-scrollbar {
-  background: #2a2a2e;
+  background: #0074d9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #414148;
+  background: #40a9ff;
 }
  
 input:-webkit-autofill,
