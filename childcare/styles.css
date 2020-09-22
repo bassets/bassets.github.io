@@ -9,8 +9,8 @@ h2 {
 }
 
 button {
-  background-color: #0060DF;
-  border: solid 1px #0060DF;
+  background-color: #2ecc40;
+  border: solid 1px #2ecc40;
   border-radius: 4px;
   cursor: pointer;
   padding: 10px 30px;
@@ -23,7 +23,7 @@ button {
   transition: .2s ease;
 }
 button:hover {
-  box-shadow: 0 0 0 5px #4A4A4F;
+  box-shadow: 0 0 0 5px #53dd9f;
 }
 
 .input {
@@ -36,7 +36,7 @@ button:hover {
 }
 .input input, .input textarea {
   border: 1px solid rgba(249, 249, 250, 0.2);
-  background: #38383d;
+  background: #39cccc;
   font: inherit;
   color: inherit;
   border-radius: 3px;
@@ -48,8 +48,7 @@ button:hover {
   transition: inherit;
 }
 .input input:focus, .input textarea:focus {
-  box-shadow: 0 0 0 1px #45a1ff, 0 0 0 4px rgba(69, 161, 255, 0.3),
-    0 0 0 1px #45a1ff;
+  box-shadow: 0 0 0 1px #39cccc, 0 0 0 4px hsl(180deg 59% 51% / 30%), 0 0 0 1px #39cccc;
 }
 .input.long input {
   width: calc(100% - 30px);
@@ -62,7 +61,7 @@ button:hover {
   padding: 0 4px;
   right: 7px;
   top: 0;
-  color: gray;
+  color: #ffffffa8;
   width: max-content;
   pointer-events: none;
   user-select: none;
@@ -76,14 +75,14 @@ button:hover {
   box-shadow: inset 0 -5px 0 0 #38383d;
 }
 .input input:focus + a, .input textarea:focus + a {
-  color: #45a1ff;
-  box-shadow: inset 0 -9.5px 0 0 #38383d;
+  color: white;
+  box-shadow: inset 0 -9.5px 0 0 #39cccc;
 }
 
 .overlay {
   display: grid;
   place-content: center;
-  background: #2a2a2e;
+  background: #0074d9;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -99,8 +98,9 @@ button:hover {
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 html {
-  background: #2a2a2e;
+  background: #0074d9;
   color: #f9f9fa;
+  color: white;
   display: grid;
   text-align: right;
   white-space: pre-line;
