@@ -22,14 +22,14 @@
 את הפנייה ניתן לשלוח במילוי פרטים אישיים, או לחלופין בעילום שם.
 &#8203;
 מענה לפנייתך יינתן בהקדם האפשרי.
-</h2>
+</h2><div class="select"><select id="to"> <option>יעד</option> <option>למנהלת המעון</option> <option>לועד ההורים</option> </select><svg viewBox="0 0 30 30" width="20" height="20"> <path fill="currentColor" d="M19.214 21.212L12.865 15l6.35-6.35-1.933-1.932L9 15l8.282 8.282 1.932-2.07z"></path> </svg></div>
 <div class="input"> <input type="text" required="required" id="fname" autocomplete="false"><a>שם פרטי</a> </div>  <div class="input"> <input type="text" required="required" id="lname"><a>שם משפחה</a> </div><div class="input"> <textarea type="text" required="required" id="content"></textarea><a>תוכן הפניה</a> </div><button onclick="send()">שלח</button>
 <div class="overlay hidden"><svg height="64px" viewBox="0 0 512 512" width="64px" fill="currentColor" style="margin: auto"><path d="m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0"></path></svg><h1>המייל נשלח בהצלחה</h1>   </div>
 <script src="https://smtpjs.com/v3/smtp.js"></script>  
 <script>
 function send() {
   document.querySelector('button').innerHTML = 'שולח...';
-  var value = "שם פרטי: "+document.getElementById('fname').value+"<br>שם משפחה: "+document.getElementById('lname').value+"<br>תוכן: "+document.getElementById('content').value
+  var value = "יעד: "+document.querySelector("#to").options[document.querySelector("#to").selectedIndex].text+"<br>שם פרטי: "+document.getElementById('fname').value+"<br>שם משפחה: "+document.getElementById('lname').value+"<br>תוכן: "+document.getElementById('content').value
   Email.send({
     Host: "smtp.gmail.com",
     Username: "childcaremailll@gmail.com",
@@ -44,5 +44,6 @@ function send() {
   })
 }
 </script>
-</body>
-</html>
+
+
+</body></html>
