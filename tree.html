@@ -123,6 +123,9 @@
             var response = JSON.parse(this.responseText);
             callback(response);
           }
+          else {
+            callback();
+          }
         };
         xmlhttp.open(type, url, true);
         xmlhttp.send();
