@@ -71,6 +71,10 @@ a {
   border-radius: .5rem;
 }
 
+.file a span, .folder a span {
+  font-weight: 700;
+}
+
 .file:hover, .folder:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 0 1px #2e44ff;
 }
