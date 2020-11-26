@@ -71,6 +71,11 @@ a {
   border-radius: .5rem;
 }
 
+.file a, .folder a {
+  color: inherit;
+  font-weight: inherit;
+}
+
 .file a span, .folder a span {
   font-weight: 700;
 }
