@@ -96,7 +96,7 @@ document.querySelector('.search .input').addEventListener('input', e => {
 document.querySelector('.search .input').addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
         document.querySelectorAll('.file[style="display: flex;"], .folder[style="display: flex;"]')[0].click();
-	document.querySelector('.search .input').innerHTML = document.querySelector('.search .input').innerHTML.replace('<br>', '');
+	document.querySelector('.search .input').innerHTML = document.querySelector('.search .input').innerText;
     }
 });
 </script>
