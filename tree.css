@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Menlo';
+  font-style: normal;
+  font-weight: normal;
+  src: url('//Menlo-Regular.woff') format('woff');
+}
+
 body {
   background: #d0d1de;
   color: #0d0f21;
@@ -5,6 +12,10 @@ body {
   margin: 0;
   padding: 1rem 1.5rem;
   font-family: "Inter", sans-serif;
+}
+
+code {
+  font-family: 'Menlo', monospace;
 }
 
 .title {
