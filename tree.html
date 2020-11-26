@@ -73,7 +73,7 @@
         document.title = 'Repository Inspector - '+split[0]+'/'+split[1];
         
         str = 'https://api.github.com/repos/'+split[0]+'/'+split[1]+'/contents/';
-        for (var i = 1; i < split.length; i++) {
+        for (var i = 2; i < split.length; i++) {
           str += split[i]+'/';
           document.querySelector('.name').innerHTML += '/'+split[i];
           document.title += '/'+split[i];
