@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Menlo';
+  font-family: 'Monaco';
   font-style: normal;
   font-weight: normal;
-  src: url('//Menlo-Regular.woff') format('woff');
+  src: url('//codedit.berryscript.com/Monaco.woff') format('woff');
 }
 
 body {
@@ -15,7 +15,8 @@ body {
 }
 
 code {
-  font-family: 'Menlo', monospace;
+  font-family: "Monaco", monospace;
+  font-size: 11px;
 }
 
 .title {
