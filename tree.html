@@ -82,8 +82,8 @@ function httpRequest(type, url, callback) {
     xmlhttp.send();
 }
 	
-document.body.addEventListener('scroll', e => {
-  if ((document.querySelector('.title').getBoundingClientRect().bottom < 0) || (document.querySelector('.title').style.display == 'none')) {
+document.addEventListener('scroll', e => {
+  if ((document.querySelector('.title').getBoundingClientRect().bottom <= 0) || (document.querySelector('.title').style.display == 'none')) {
     document.querySelector('.search').style.opacity = 1;
   }
   else {
@@ -104,9 +104,11 @@ document.querySelector('.search .input').addEventListener('input', e => {
   })
 	if (value) {
 		document.querySelector('.title').style.display = 'none';
+		document.querySelector('.files').style.marginTop = '60px';
 	}
 	else {
 		document.querySelector('.title').style.display = 'block';
+		document.querySelector('.files').style.marginTop = '0';
 	}
 })
 </script>
