@@ -85,3 +85,43 @@ a {
   margin-right: 10px;
   fill: #2e44ff;
 }
+
+.search {
+  position: fixed;
+  width: calc(100vw - 4rem);
+  box-sizing: border-box;
+  background: white;
+  border-radius: .5rem;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e5e5e5;
+  height: 55px;
+  outline: none;
+  top: 10px;
+}
+
+.search .modal-logo {
+  padding-right: .5rem;
+}
+
+.search .logo-circle svg {
+  max-width: 0.8rem;
+}
+
+.search .logo-circle {
+  width: 2rem;
+  height: 2rem;
+}
+
+.search .input {
+  outline: none;
+  width: 100%;
+}
+
+.search .input:empty::after {
+  content: 'Search files...';
+  color: gray;
+  pointer-events: none;
+}
