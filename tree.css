@@ -88,7 +88,7 @@ a {
 
 .search {
   position: fixed;
-  width: calc(100vw - 4rem);
+  width: calc(100vw - 48px);
   box-sizing: border-box;
   background: white;
   border-radius: .5rem;
