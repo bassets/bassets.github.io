@@ -15,7 +15,7 @@ httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commi
 
 function getCommit(sha) {
   files.innerHTML = 'Loading [1100] - Getting commit '+sha;
-  httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits/'+sha, (d) => { getTree(d.tree.sha) });
+  httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits/'+sha, (d) => { getTree(d.commit.tree.sha) });
 }
 
 function getTree(sha) {
