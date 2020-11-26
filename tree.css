@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Monaco';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Monaco'), url('Monaco.woff') format('woff');
-}
-
 body {
   background: #d0d1de;
   color: #0d0f21;
@@ -15,8 +8,7 @@ body {
 }
 
 code {
-  font-family: "Monaco", monospace;
-  font-size: 11px;
+  font-family: inherit;
 }
 
 .title {
