@@ -6,7 +6,7 @@
   </head>
   <body>
   <div class="title"><h2>Bassets File Tree</h2><p>Here you can see all files stored on the <a href="/">bassets.github.io</a> server.</p></div>
-  <div class="files">Loading [1000] - Getting commits</div>
+<div class="files"><div class="file">Loading [1000] - Getting commits</div></div>
   
 <script>
 var files = document.querySelector('.files');
@@ -14,12 +14,12 @@ var files = document.querySelector('.files');
 httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits', (d) => { getCommit(d[0].sha) });
 
 function getCommit(sha) {
-  files.innerHTML = 'Loading [1100] - Getting commit '+sha;
+  files.innerHTML = '<div class="file">Loading [1100] - Getting commit '+sha+'</div>';
   httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits/'+sha, (d) => { getTree(d.commit.tree.sha) });
 }
 
 function getTree(sha) {
-  files.innerHTML = 'Loading [1110] - Getting tree '+sha;
+  files.innerHTML = '<div class="file">Loading [1110] - Getting tree '+sha+'</div>';
   httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/git/trees/'+sha, renderFiles);
 }
 
