@@ -71,15 +71,6 @@ function httpRequest(type, url, callback) {
     xmlhttp.open(type, url, true); 
     xmlhttp.send();
 }
-	
-document.addEventListener('scroll', e => {
-  if ((document.querySelector('.title').getBoundingClientRect().bottom <= 0) || (document.querySelector('.title').style.display == 'none')) {
-    document.querySelector('.search').style.opacity = 1;
-  }
-  else {
-   document.querySelector('.search').style.opacity = 0;
-  }
-})
 
 var p;
 document.querySelector('.search .input').addEventListener('input', e => {
@@ -94,11 +85,11 @@ document.querySelector('.search .input').addEventListener('input', e => {
   })
 	if (value) {
 		document.querySelector('.title').style.display = 'none';
-		document.querySelector('.files').style.marginTop = '60px';
+		document.querySelector('.search').style.marginTop = '0';
 	}
 	else {
 		document.querySelector('.title').style.display = 'block';
-		document.querySelector('.files').style.marginTop = '';
+		document.querySelector('.search').style.marginTop = '';
 	}
 })
 </script>
