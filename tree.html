@@ -83,7 +83,7 @@ function httpRequest(type, url, callback) {
 }
 	
 document.body.addEventListener('scroll', e => {
-  if (document.querySelector('.title').getBoundingClientRect().bottom < 0 || document.querySelector('.title').style.display == 'none') {
+  if ((document.querySelector('.title').getBoundingClientRect().bottom < 0) || (document.querySelector('.title').style.display == 'none')) {
     document.querySelector('.search').style.opacity = 1;
   }
   else {
