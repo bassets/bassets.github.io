@@ -1,0 +1,65 @@
+body {
+  background: #d0d1de;
+  color: #0d0f21;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.title {
+  background: white;
+  padding: .5rem 1rem;
+  font-weight: 500;
+  border: 2px solid #e5e5e5;
+  border-radius: .5rem;
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 100%;
+}
+
+h2 {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+p {
+  font-size: inherit;
+  color: #6a6b76;
+}
+
+a {
+  text-decoration: none;
+  color: #2e44ff;
+  font-weight: 700;
+}
+
+.files {
+  border-radius: .5em;
+  margin: 10px 0;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.file, .folder {
+  padding: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: .5rem;
+}
+
+.file:hover, .folder:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 0 1px #2e44ff;
+}
+.file:active, .folder:active, .file.load, .folder.load {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 0 1px #2e44ff;
+  background: #e9e5ff;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  fill: #2e44ff;
+}
