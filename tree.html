@@ -26,7 +26,7 @@ function getTree(sha) {
 }
 
 function renderFiles(data) {
-  files.innerHTML = 'Loaded [1111]';
+  files.innerHTML = '';
   data.tree.forEach(file => {
     if (file.type == 'tree') {
       files.innerHTML += '<div class="folder" onclick="renderFolder('+file.url+')">Folder '+file.path+'</div>';
