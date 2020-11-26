@@ -80,6 +80,13 @@ function httpRequest(type, url, callback) {
     xmlhttp.open(type, url, true); 
     xmlhttp.send();
 }
+	
+if (document.querySelector('.title').getBoundingClientRect().bottom < 0) {
+	document.querySelector('.search').style.opacity = 1;
+}
+else {
+	document.querySelector('.search').style.opacity = 0;
+}
 </script>
 </body>
 </html>
