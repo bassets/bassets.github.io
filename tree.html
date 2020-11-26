@@ -79,7 +79,7 @@ document.querySelector('.search .input').addEventListener('input', e => {
     if (!p.innerText.includes(value)) {
       p.parentElement.style.display = 'none';
     } else {
-      p.parentElement.style.display = 'block';
+      p.parentElement.style.display = 'flex';
     }
     p.innerHTML = p.innerText.replace(value, '<span>'+value+'</span>')
   })
