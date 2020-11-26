@@ -127,6 +127,7 @@ a {
 .search .input {
   outline: none;
   width: 100%;
+  height: 24px;
 }
 
 .search .input:empty::after {
