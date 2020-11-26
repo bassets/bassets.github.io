@@ -96,8 +96,6 @@ a {
 }
 
 .search {
-  position: fixed;
-  width: calc(100% - 48px);
   box-sizing: border-box;
   background: white;
   border-radius: .5rem;
@@ -109,8 +107,8 @@ a {
   height: 55px;
   outline: none;
   top: 10px;
-  opacity: 0;
-  transition: .2s ease;
+  margin: 10px 0;
+  position: sticky;
 }
 
 .search .modal-logo {
