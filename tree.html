@@ -67,6 +67,7 @@ function renderFiles(data) {
         '<a>' + file.path + '</a></div>';
     }
   })
+	p = document.querySelectorAll('.file a, .folder a');
 }
 
 function httpRequest(type, url, callback) {
@@ -81,16 +82,16 @@ function httpRequest(type, url, callback) {
     xmlhttp.send();
 }
 	
-document.addEventListener('scroll', e => {
-  if (document.querySelector('.title').getBoundingClientRect().bottom < 0) {
+document.body.addEventListener('scroll', e => {
+  if (document.querySelector('.title').getBoundingClientRect().bottom < 0 || document.querySelector('.title').style.display == 'none') {
     document.querySelector('.search').style.opacity = 1;
   }
   else {
-    document.querySelector('.search').style.opacity = 0;
+   document.querySelector('.search').style.opacity = 0;
   }
 })
 
-var p = document.querySelectorAll('.file a, .folder a');
+var p;
 document.querySelector('.search .input').addEventListener('input', e => {
   var value = document.querySelector('.search .input').innerText;
   p.forEach(p => {
@@ -101,6 +102,12 @@ document.querySelector('.search .input').addEventListener('input', e => {
     }
     p.innerHTML = p.innerText.replace(value, '<span>'+value+'</span>')
   })
+	if (value) {
+		document.querySelector('.title').style.display = 'none';
+	}
+	else {
+		document.querySelector('.title').style.display = 'block';
+	}
 })
 </script>
 </body>
