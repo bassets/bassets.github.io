@@ -95,7 +95,7 @@ document.querySelector('.search .input').addEventListener('input', e => {
 	
 document.querySelector('.search .input').addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
-        document.querySelectorAll('.file[display="flex"], .folder[display="flex"]')[0].click();
+        document.querySelectorAll('.file[style="display: flex;"], .folder[style="display: flex;"]')[0].click();
     }
 });
 </script>
