@@ -1,0 +1,51 @@
+<html>
+  <head>
+  <title>Bassets - File Tree</title>
+  <link rel="stylesheet" href="/tree.css">
+  </head>
+  <body>
+  <h1>Bassets File Tree</h1>
+  <h3>Here you can see all files stored on the <code>bassets.github.io</code> server.</h3>
+  <div class="files">Loading [1000] - Getting commits</div>
+  
+<script>
+var files = document.querySelector('.files');
+
+httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits', (d) => { getCommit(d[0].sha) });
+
+function getCommit(sha) {
+  files.innerHTML = 'Loading [1100] - Getting commit '+sha;
+  httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/commits/'+sha, (d) => { getTree(d.tree.sha) });
+}
+
+function getTree(sha) {
+  files.innerHTML = 'Loading [1110] - Getting tree '+sha;
+  httpRequest('GET', 'https://api.github.com/repos/bassets/bassets.github.io/git/trees/'+sha, renderFiles);
+}
+
+function renderFiles(data) {
+  files.innerHTML = 'Loaded [1111]';
+  data.tree.forEach(file => {
+    if (file.type == 'tree') {
+      files.innerHTML += '<div class="folder" onclick="renderFolder('+file.url+')">Folder '+file.path+'</div>';
+    }
+    else {
+      files.innerHTML += '<div class="file" onclick="renderFile('+file.url+')">'+file.path+'</div>';
+    }
+  }
+}
+
+function httpRequest(type, url, callback) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() { 
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            callback(response);
+        }
+    }
+    xmlhttp.open(type, url, true); 
+    xmlhttp.send();
+}
+</script>
+</body>
+</html>
