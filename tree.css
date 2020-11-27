@@ -99,6 +99,23 @@ a {
   fill: #2e44ff;
 }
 
+.viewer {
+  padding: 13px;
+  overflow: auto;
+  position: relative;
+}
+
+.viewer::before {
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+  background: linear-gradient(-90deg, white, #ffffff00);
+  border-radius: 0 .5rem .5rem 0;
+}
+
 .search {
   box-sizing: border-box;
   background: white;
