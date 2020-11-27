@@ -129,6 +129,8 @@
       }
       
       function renderRepos(data) {
+        files.innerHTML = "";
+        
         data.forEach(repo => {
           files.innerHTML +=
             '<div class="folder" onclick="window.location.href = \'' +
