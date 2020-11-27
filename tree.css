@@ -103,6 +103,7 @@ a {
   padding: 13px;
   overflow: auto;
   position: relative;
+  background: transparent;
 }
 
 .viewer::before {
