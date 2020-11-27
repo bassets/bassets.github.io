@@ -91,7 +91,7 @@
         files.innerHTML = "";
         
         if (data) {
-          if (split[split.length-1].includes('.')) {
+          if (data.content) {
             files.innerHTML = '<pre class="viewer">'+escapeHTML(atob(data.content))+'</pre>';
             document.querySelector('.search').style.display = 'none';
           }
