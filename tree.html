@@ -120,9 +120,6 @@
           };
           p = document.querySelectorAll(".file a, .folder a");
         }
-        else if (!split[split.length-1].includes('.')) {
-          files.innerHTML = '<div class="file">No files</div>';
-        }
       }
 
       function httpRequest(type, url, callback) {
