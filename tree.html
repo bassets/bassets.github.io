@@ -88,7 +88,7 @@
         window.history.pushState("Repository Inspector", "Repository Inspector - bassets/bassets.github.io", "https://bassets.github.io/tree?q=bassets/bassets.github.io");
       }
       
-      if (split.length == 1) {
+      if (split && split.length == 1) {
         str = 'https://api.github.com/users/'+split[0]+'/repos';
         httpRequest("GET", str, renderRepos);
       }
