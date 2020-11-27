@@ -69,9 +69,9 @@
       if (q) {
         var split = q.split('/');
         
-        document.querySelector('.file').innerHTML = 'Looking for files in '+split[0]+'/'+split[1]+'...';
-        document.querySelector('.name').innerHTML = split[0]+'/'+split[1];
-        document.title = 'Repository Inspector - '+split[0]+'/'+split[1];
+        document.querySelector('.file').innerHTML = 'Looking for files in '+split[0]+'/'+(split[1] ? split[1] : '')+'...';
+        document.querySelector('.name').innerHTML = split[0]+'/'+(split[1] ? split[1] : '');
+        document.title = 'Repository Inspector - '+split[0]+'/'+(split[1] ? split[1] : '');
         
         str = 'https://api.github.com/repos/'+split[0]+'/'+split[1]+'/contents/';
         for (var i = 2; i < split.length; i++) {
