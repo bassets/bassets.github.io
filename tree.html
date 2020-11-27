@@ -2,9 +2,8 @@
   <head>
     <title>Repository Inspector</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/default.min.css" />
     <link rel="stylesheet" href="/tree.css" />
-    <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/default.min.css">
   </head>
   <body>
     <div class="title">
@@ -101,10 +100,10 @@
         
         if (data) {
           if (data.content) {
-            files.innerHTML = '<pre class="viewer '+(data.name.includes('.') ? data.name.split('.')[1] : '')+'" onload="hljs.highlightBlock(this)">'+escapeHTML(atob(data.content))+'</pre>';
+            files.innerHTML = '<pre class="viewer '+(data.name.includes('.') ? data.name.split('.')[1] : '')+'">'+escapeHTML(atob(data.content))+'</pre>';
             document.querySelector('.search').style.display = 'none';
             
-            //hljs.highlightBlock(document.querySelector('.viewer'));
+            hljs.highlightBlock(document.querySelector('.viewer'));
           }
           else {
             data.forEach((file) => {
