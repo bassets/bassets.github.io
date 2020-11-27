@@ -30,8 +30,8 @@
       <h2>Repository Inspector</h2>
       <p>
         Inspects all the files stored on a Github repository.<br>
-        Syntax: <code>bassets.github.io/tree?q=USERNAME@REPO</code><br>
-        Currently inspecting <a onclick="window.location.href = 'https://github.com/'+this.innerHTML.replaceAll('@', '/')" class="name">bassets@bassets.github.io</a>.
+        Syntax: <code>bassets.github.io/tree?q=USERNAME/REPO</code><br>
+        Currently inspecting <a onclick="window.location.href = 'https://github.com/'+this.innerHTML" class="name">bassets/bassets.github.io</a>.
       </p>
     </div>
     <div class="search">
@@ -67,25 +67,25 @@
       var q = url.searchParams.get('q');
       var str = 'https://api.github.com/repos/bassets/bassets.github.io/contents';
       if (q) {
-        var split = q.split('@');
+        var split = q.split('/');
         
-        document.querySelector('.file').innerHTML = 'Looking for files in '+split[0]+'@'+split[1];
-        document.querySelector('.name').innerHTML = split[0]+'@'+split[1];
-        document.title = 'Repository Inspector - '+split[0]+'@'+split[1];
+        document.querySelector('.file').innerHTML = 'Looking for files in '+split[0]+'/'+split[1];
+        document.querySelector('.name').innerHTML = split[0]+'/'+split[1];
+        document.title = 'Repository Inspector - '+split[0]+'/'+split[1];
         
         str = 'https://api.github.com/repos/'+split[0]+'/'+split[1]+'/contents/';
         for (var i = 2; i < split.length; i++) {
           str += split[i]+'/';
-          document.querySelector('.file').innerHTML += '@'+split[i];
-          document.querySelector('.name').innerHTML += '@'+split[i];
-          document.title += '@'+split[i];
+          document.querySelector('.file').innerHTML += '/'+split[i];
+          document.querySelector('.name').innerHTML += '/'+split[i];
+          document.title += '/'+split[i];
         }
         
         document.querySelector('.file').innerHTML += '...';
       }
       else {
-        document.title = 'Repository Inspector - bassets@bassets.github.io';
-        window.history.pushState("Repository Inspector", "Repository Inspector - bassets@bassets.github.io", "https://bassets.github.io/tree?q=bassets@bassets.github.io");
+        document.title = 'Repository Inspector - bassets/bassets.github.io';
+        window.history.pushState("Repository Inspector", "Repository Inspector - bassets/bassets.github.io", "https://bassets.github.io/tree?q=bassets/bassets.github.io");
       }
         
       httpRequest("GET", str, renderFiles);
@@ -98,7 +98,7 @@
             if (file.type == "dir") {
               files.innerHTML +=
                 '<div class="folder" onclick="window.location.href = \'' +
-                window.location.href+'@'+file.name +
+                window.location.href+'/'+file.name +
                 "'\">" +
                 '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="419.116" viewBox="0 0 512 419.116" class="icon"> <defs> <clipPath id="clip-folder-new"> <rect width="512" height="419.116"></rect> </clipPath> </defs> <g id="folder-new" clip-path="url(#clip-folder-new)"> <path id="Union_1" data-name="Union 1" d="M16.991,419.116A16.989,16.989,0,0,1,0,402.125V16.991A16.989,16.989,0,0,1,16.991,0H146.124a17,17,0,0,1,10.342,3.513L227.217,57.77H437.805A16.989,16.989,0,0,1,454.8,74.761v53.244h40.213A16.992,16.992,0,0,1,511.6,148.657L454.966,405.222a17,17,0,0,1-16.6,13.332H410.053v.562ZM63.06,384.573H424.722L473.86,161.988H112.2Z" fill="var(--c-action-primary)" stroke="" stroke-width="1"></path> </g> </svg>' +
                 "<a>" +
