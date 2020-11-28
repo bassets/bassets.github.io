@@ -42,6 +42,7 @@ code {
 .logo-circle svg {
   max-width: 1.5rem;
   fill: #2e44ff;
+  pointer-events: none;
 }
 
 h2 {
