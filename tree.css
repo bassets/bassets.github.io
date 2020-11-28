@@ -57,7 +57,7 @@ p {
 a {
   color: #2e44ff;
   font-weight: 700;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .files {
