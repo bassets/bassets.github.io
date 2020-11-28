@@ -106,7 +106,7 @@ a {
   background: transparent;
 }
 
-.viewer::before {
+.files.viewer::before {
   content: '';
   height: 100%;
   position: absolute;
