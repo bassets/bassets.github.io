@@ -32,7 +32,7 @@
       <p>
         Inspects all the files stored on a Github repository.<br>
         Syntax: <code>bassets.github.io/tree?q=USERNAME/REPO</code><br>
-        Currently inspecting <a href="https://github.io/bassets/bassets.github.io" class="name">bassets/bassets.github.io</a>
+        Currently inspecting <a href="https://github.com/bassets/bassets.github.io" class="name">bassets/bassets.github.io</a>
       </p>
     </div>
     <div class="search">
@@ -106,7 +106,7 @@
             document.querySelector('.search').style.display = 'none';    
             hljs.highlightBlock(document.querySelector('.viewer'));
             
-            document.querySelector('name').href = data.html_url;
+            document.querySelector('.name').href = data.html_url;
           }
           else {
             data.forEach((file) => {
@@ -130,7 +130,7 @@
                   "</a></div>";
               }
             })
-            document.querySelector('name').href = 'https://github.com/'+document.querySelector('name').innerHTML;
+            document.querySelector('.name').href = 'https://github.com/'+document.querySelector('.name').innerHTML;
           };
           p = document.querySelectorAll(".file a, .folder a");
         }
@@ -149,7 +149,7 @@
             repo.name +
             "</a></div>";
         })
-        document.querySelector('name').href = 'https://github.com/'+document.querySelector('name').innerHTML;
+        document.querySelector('.name').href = 'https://github.com/'+document.querySelector('.name').innerHTML;
         p = document.querySelectorAll(".file a, .folder a");
       }
 
