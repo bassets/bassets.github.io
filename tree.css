@@ -65,6 +65,7 @@ a {
   margin: 10px 0;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .file, .folder {
@@ -115,6 +116,7 @@ a {
   width: 25px;
   background: linear-gradient(-90deg, white, #ffffff00);
   border-radius: 0 .5rem .5rem 0;
+  z-index: 1;
 }
 
 .search {
