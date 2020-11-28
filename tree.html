@@ -101,12 +101,12 @@
         if (data) {
           if (data.content) {
             files.innerHTML = '<pre class="viewer '+(data.name.includes('.') ? data.name.split('.')[data.name.split('.')] : '')+'">'+escapeHTML(atob(data.content))+'</pre>';
-            document.querySelector('.files').classList.add('viewer');
+            document.querySelector('.files').classList.add('viewing');
             
             document.querySelector('.search').style.display = 'none';    
             hljs.highlightBlock(document.querySelector('.viewer'));
             
-            document.querySelector('name').href = html_url;
+            document.querySelector('name').href = data.html_url;
           }
           else {
             data.forEach((file) => {
@@ -130,7 +130,7 @@
                   "</a></div>";
               }
             })
-            document.querySelector('name').href = 'https://github.com/'+this.innerHTML;
+            document.querySelector('name').href = 'https://github.com/'+document.querySelector('name').innerHTML;
           };
           p = document.querySelectorAll(".file a, .folder a");
         }
@@ -149,7 +149,7 @@
             repo.name +
             "</a></div>";
         })
-        document.querySelector('name').href = 'https://github.com/'+this.innerHTML;
+        document.querySelector('name').href = 'https://github.com/'+document.querySelector('name').innerHTML;
         p = document.querySelectorAll(".file a, .folder a");
       }
 
