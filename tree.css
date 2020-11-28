@@ -133,6 +133,7 @@ a {
   top: 10px;
   margin: 10px 0;
   position: sticky;
+  z-index: 1;
 }
 
 .search:focus-within {
