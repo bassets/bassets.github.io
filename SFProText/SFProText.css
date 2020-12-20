@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-LightItalic.woff2') format('woff2');
   font-weight: 300;
   font-style: italic;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-RegularItalic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
@@ -39,7 +39,7 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'SF Pro Text';
   src: url('SFProText-Semibold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
